@@ -13,6 +13,8 @@ const products = [
     {id: 12, title: 'Adapter', price: 600},
 ];
 
+
+// добавил аргумент img и строку с img в результат работы функции
 const renderProduct = (title, price, img = 'placeholder') => {
     return `<div class="product-item">
                 <img class="product-pic" scr="${img}">
@@ -24,6 +26,7 @@ const renderProduct = (title, price, img = 'placeholder') => {
 
 const renderProducts = (list) => {
     const productList = list.map(good => renderProduct(good.title, good.price));
+    // превратил массив в строку с помощью forEach. этим убрал запятые
     let productHtml = '';
     productList.forEach(element => productHtml += element);
     document.querySelector('.products').innerHTML = productHtml;
